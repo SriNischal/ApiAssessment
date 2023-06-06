@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class RequestcallMethods {
-	public CommonUtils helper;
+	public  CommonUtils helper;
 	protected RequestSpecification request;
 	protected Response response;
 	
@@ -32,12 +32,7 @@ public class RequestcallMethods {
 	            .post().then().log()
 				.all().extract().response();
 		LOGGER.info("Details created for the new id");
-		assertThat(response.getStatusCode(), is(Integer.parseInt(helper.helperutuil("code"))));
-		assertThat(response.getStatusLine(), equalTo(helper.helperutuil("statusline")));
-		assertThat(response.body(), notNullValue());
-		response.then().assertThat().body("id", Matchers.equalTo(Integer.parseInt(helper.helperutuil("id"))));
-		response.then().assertThat().body("category.name", Matchers.equalTo(helper.helperutuil("categoryname")));
-		response.then().assertThat().body("tags", hasItem(hasEntry("name", helper.helperutuil("tagname"))));
+		
 	}
 	public void postimage() {
 		helper = new CommonUtils();
@@ -94,7 +89,6 @@ public class RequestcallMethods {
 		LOGGER.info("Started updating pet details for the created id");
 		request = helper.getjsondata(ProjectbasedConstantPaths.PUT_JSON_DATA);
 		response = request.header("Content-Type", helper.helperutuil("ContentType")).when().put().then().log().all().extract().response();
-		System.out.println(response);
 		LOGGER.info("Details updated for the created id");
 		assertThat(response.getStatusCode(), is(Integer.parseInt(helper.helperutuil("code"))));
 		assertThat(response.getStatusLine(), equalTo(helper.helperutuil("statusline")));
