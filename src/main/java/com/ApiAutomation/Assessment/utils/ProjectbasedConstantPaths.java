@@ -9,5 +9,5 @@ public class ProjectbasedConstantPaths {
     public final static String JSON_DATA = USER_HOME + File.separator + "src/main/resources"+ File.separator + "poperties"
             + File.separator + "testdata.json";
     public final static String PUT_JSON_DATA = USER_HOME + File.separator + "src/main/resources"+ File.separator + "poperties"
-            + File.separator + "output.json";
+            + File.separator + "putoutputlatest.json";
 }

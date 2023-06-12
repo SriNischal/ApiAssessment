@@ -95,6 +95,11 @@
 			<version>2.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock -->
+		<dependency>
+			<groupId>com.atmecs</groupId>
+			<artifactId>AppiumPractice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
